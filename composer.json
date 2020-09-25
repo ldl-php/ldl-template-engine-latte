@@ -1,0 +1,29 @@
+{
+    "name": "ldl-framework/template-engine-latte",
+    "type": "library",
+    "description": "Latte template engine wrapper",
+    "keywords": [
+        "Template",
+        "Wrapper",
+        "Latte",
+        "Nette"
+    ],
+    "homepage": "https://github.com/pthreat/ldl-template-engine-latte",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Federico Stange",
+            "email": "jpfstange@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "ldl-framework/template-contracts": "dev-master",
+        "latte/latte": "^2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "LDL\\Template\\": "src/LDL/Template/Wrapper"
+        }
+    }
+}
