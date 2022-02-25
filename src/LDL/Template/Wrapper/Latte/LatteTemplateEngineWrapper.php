@@ -1,10 +1,12 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace LDL\Template\Wrapper\Latte;
 
+use Latte\Engine as Latte;
 use Latte\Loaders\StringLoader;
 use LDL\Template\Contracts\TemplateEngineInterface;
-use Latte\Engine as Latte;
 
 class LatteTemplateEngineWrapper implements TemplateEngineInterface
 {
@@ -13,9 +15,9 @@ class LatteTemplateEngineWrapper implements TemplateEngineInterface
      */
     private $engine;
 
-    public function __construct(Latte $engine)
+    public function __construct(Latte $engine = null)
     {
-        $this->engine = $engine;
+        $this->engine = $engine ?? new Latte();
     }
 
     public function renderFromString(string $string, $values): string
@@ -45,7 +47,7 @@ class LatteTemplateEngineWrapper implements TemplateEngineInterface
         return $result;
     }
 
-    private function throwOnAnyError() :void
+    private function throwOnAnyError(): void
     {
         /*
          * Throw exceptions on any undefined variable ot whatever it might go wrong

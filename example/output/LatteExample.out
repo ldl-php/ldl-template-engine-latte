@@ -1,0 +1,9 @@
+Create the following template string
+##############################################
+
+{$name} {$surname}
+
+Populate template variables
+##############################################
+
+My name My surname
